@@ -30,6 +30,67 @@
                 <label class="block text-sm mb-2 text-slate-500">Ваш Solana Wallet (для верифікації)</label>
                 <input type="text" placeholder="0x... або Sol..." class="w-full p-3 bg-black border border-zinc-700 rounded-lg focus:border-purple-500 outline-none">
             </div>
+<nav class="p-6 flex justify-between items-center max-w-6xl mx-auto relative z-50">
+    <div class="text-2xl font-black tracking-tighter flex items-center gap-2">
+        <span class="text-white">PTN</span><span class="text-purple-500 text-shadow-glow">PNHYU</span>
+    </div>
+
+    <button id="menu-btn" class="text-white focus:outline-none p-2 bg-zinc-900 rounded-xl border border-purple-500/20 hover:border-purple-500 transition-all">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <div id="mobile-menu" class="hidden absolute top-20 right-6 w-72 bg-zinc-950/95 border border-purple-500/30 rounded-2xl p-6 shadow-[0_10px_30px_rgba(147,51,234,0.2)] backdrop-blur-md">
+        <ul class="space-y-4 font-medium text-sm text-slate-300">
+            <li>
+                <a href="#first-funds" class="block hover:text-purple-400 border-b border-zinc-900 pb-2 transition-colors">📊 1. Куди пішли перші кошти</a>
+            </li>
+            <li>
+                <a href="#connect-wallet" class="block hover:text-purple-400 border-b border-zinc-900 pb-2 transition-colors font-bold text-purple-400">⚡ 2. Конект гаманець / Увійти</a>
+            </li>
+            <li>
+                <a href="ПОСИЛАННЯ_НА_GITHUB_ПРОЄКТУ" target="_blank" class="block hover:text-purple-400 border-b border-zinc-900 pb-2 transition-colors">🐙 3. GitHub проєкту</a>
+            </li>
+            <li>
+                <a href="#tools" class="block hover:text-purple-400 border-b border-zinc-900 pb-2 transition-colors">🛠️ 4. Інструменти проєкту</a>
+            </li>
+            <li>
+                <a href="#partnership" class="block hover:text-purple-400 border-b border-zinc-900 pb-2 transition-colors">🤝 5. Партнерство і допомога</a>
+            </li>
+            <li>
+                <a href="#evolution" class="block hover:text-purple-400 border-b border-zinc-900 pb-2 transition-colors italic text-white">🚀 6. Наступний рівень еволюції</a>
+            </li>
+            <li>
+                <a href="#swap" class="block hover:text-purple-400 border-b border-zinc-900 pb-2 transition-colors">🔄 7. Купити / Обмін SOL & wSOL</a>
+            </li>
+            <li>
+                <a href="ПОСИЛАННЯ_НА_ТВОРЦЯ_В_ТГ" target="_blank" class="block text-center mt-4 bg-purple-600 hover:bg-purple-500 text-white py-2.5 rounded-xl font-bold uppercase tracking-wider text-xs transition-all">
+                    📩 8. Написати творцю
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Відкриття/закриття меню при натисканні на кнопку
+    menuBtn.addEventListener('click', (e) => {
+        mobileMenu.classList.toggle('hidden');
+        e.stopPropagation();
+    });
+
+    // Закриття меню, якщо клікнути в будь-яке інше місце сайту
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && e.target !== menuBtn) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+</script>
+
             <div>
                 <label class="block text-sm mb-2 text-slate-500">Напрямок допомоги</label>
                 <select class="w-full p-3 bg-black border border-zinc-700 rounded-lg focus:border-purple-500">
@@ -80,7 +141,7 @@
             <p class="text-white">Наша мета — не просто "To the Moon". Ми будуємо паралельну систему допомоги, яка працює швидше та чесніше за будь-яку державу.</p>
             
             <p class="text-2xl font-black text-gradient pt-4">
-                PTNPNHYU — ЦЕ ТВІЙ ПІДПИС ПІД ВИРОКОМ СТАРІЙ СИСТЕМІ.
+                PTNPNHYU — ЦЕ ТВІЙ ПІДПИС ПІД КОНТРАКТОМ З ТРАНСПОРТЕРОМ В НОВИЙЧАС.
             </p>
         </div>
 
